@@ -204,5 +204,16 @@ body{
    
 }
 
+/* techwave section */
+
+.techwave-container{
+    background: #230E3D;
+    display: grid;
+}
+
+.techwave-container div{
+    background: #351165;
+}
+
 
 
