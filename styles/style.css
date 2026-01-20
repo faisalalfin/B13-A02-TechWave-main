@@ -7,37 +7,16 @@
   font-family: "Inter", sans-serif;
 }
 
-body{
-  
-}
-
-
-.nav{
-  width: 100%;
-  height: 88px;
-  background: #1A0B2E;
- 
-}
-
-.nav-container{
-    max-width: 1200px;
-    height: 100%;
-    margin: auto;
-    padding: 0 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-logo{
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-}
-    
 :root {
   --linear: linear-gradient(90deg, #F7E93F, #FB09B4, #9100F8);
+}
+
+html { font-size: 16px; }
+body { line-height: 1.5; }
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 .gradient-text {
@@ -46,32 +25,113 @@ body{
   -webkit-text-fill-color: transparent;
 }
 
+/* =========================
+   NAVBAR
+========================= */
+
+.nav{
+  width: 100%;
+  height: 88px;
+  background: #1A0B2E;
+}
+
+.nav-container{
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-logo{
+  color: #ffffff;
+}
+
+.nav-logo h1{
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+}
 
 .nav-menu{
-    list-style: none;
-    display: flex;
-    gap: 48px;
+  list-style: none;
+  display: flex;
+  gap: 48px;
 }
 
 .nav-menu a {
   color: #ffffff;
   text-decoration: none;
+  opacity: 0.9;
 }
 
 .nav-menu a:hover{
-    opacity: 1;
+  opacity: 1;
 }
 
-.btn-primary{
-    padding: 12px 26px;
-    border-radius: 32px;
-    background: var(--linear);
-    font-weight: 600;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
+
+.nav-toggle{
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
 }
+
+.nav-toggle img{
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary{
+  padding: 12px 26px;
+  border-radius: 32px;
+  background: var(--linear);
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary{
+  padding: 12px 26px;
+  border: 2px solid #1CFF9A;
+  border-radius: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-icon{
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   background: url('../assets/hero-bg.png');
@@ -80,31 +140,40 @@ body{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-bottom: 80px;
 }
 
 .hero-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
 }
 
 .mic{
-    background: url('../assets/hero-circle.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  background: url('../assets/hero-circle.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.mic img{
+  width: 190px;
+  height: auto;
+  display: block;
 }
 
 .badge{
   position: absolute;
-  top: 30px;         
-  right: 30px;        
+  top: 30px;
+  right: 30px;
   background: #1CFF9A;
   color: #001b12;
   font-size: 12px;
@@ -114,113 +183,119 @@ body{
 }
 
 .hero-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #ffffff;
-    padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  padding-top: 80px;
+  text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .hero-content h1{
-    font-size: 4rem;
-    font-weight: bold;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
 }
 
 .hero-content p{
-    padding: 20px 0;
-    color: rgba(255, 255, 255, 0.7)
-}
-
-.btn-secondary{
-    padding: 12px 26px;
-    border: 2px solid green;
-    border-radius: 32px;
-    font-weight: 600;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
+  padding: 18px 0;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 520px;
+  font-size: 16px;
 }
 
 .hero-buttons{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.btn-icon{
-    padding-right: 8px;
+.hero-buttons button {
+  white-space: nowrap;
 }
 
-/* About section */
+/* =========================
+   ABOUT
+========================= */
 
 .about-container{
-    background: #1A0B2E;
+  background: #1A0B2E;
+  padding-top: 80px;
 }
 
 .podcast{
-    color: #ffffff;
-    text-align: center;
+  color: #ffffff;
+  text-align: center;
 }
 
 .podcast h2{
-    font-size: 48px;
-    font-weight: bold;
+  font-size: 48px;
+  font-weight: 800;
 }
 
 .podcast p{
-    max-width: 870px;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 20px;
-    color: rgba(255, 255, 255, 0.7);
+  max-width: 870px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 16px;
+  line-height: 1.9;
 }
 
 .acheivements{
-    max-width: 870px;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 50px;
-    border-top: 1px solid grey;
-    display: flex;
-    gap: 60px;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: 80px;
+  max-width: 870px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 80px;
+  padding-left: 16px;
+  padding-right: 16px;
+  flex-wrap: wrap;
 }
 
 .acheivements h2{
-    color: #00FF88;
-    font-weight: bolder;
-    font-size: 48px;
+  color: #00FF88;
+  font-weight: 800;
+  font-size: 48px;
 }
 
 .acheivements p{
-   color:  rgba(255, 255, 255, 0.7);
-   
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
 }
 
-/* techwave section */
+/* =========================
+   FEATURES
+========================= */
 
-/* whole section background */
 .features {
-  background-color: #1A0B2E;   /* main background color */
+  background-color: #1A0B2E;
   padding: 100px 20px;
 }
 
 .features h2{
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 3rem;
-    font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 800;
 }
 
-/* keep your code exactly */
 .features-grid > * {
   background: #2A1347;
   border-radius: 40px;
@@ -228,33 +303,30 @@ body{
   color: #fff;
 }
 
+.features-grid img{
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
 .features-grid h3{
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
-/* grid-area assignment */
-#audio {
-  grid-area: audio;
+.features-grid p{
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  font-size: 15px;
 }
 
-#mobile {
-  grid-area: mobile;
-}
+#audio { grid-area: audio; }
+#mobile { grid-area: mobile; }
+#global { grid-area: global; }
+#interview { grid-area: interview; }
+#resources { grid-area: resources; }
 
-#global {
-  grid-area: global;
-}
-
-#interview {
-  grid-area: interview;
-}
-
-#resources {
-  grid-area: resources;
-}
-
-/* grid container */
 .features-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -270,6 +342,371 @@ body{
     "interview interview resources";
 }
 
+/* =========================
+   SECTION DARK
+========================= */
 
+.section-dark{
+  background: #1A0B2E;
+  padding: 90px 20px;
+}
 
+.section-title{
+  color: #fff;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
 
+.section-title.mt{
+  margin-top: 80px;
+}
+
+.episodes-grid{
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.episode-card{
+  background: #2A1347;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.episode-media iframe{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border: 0;
+}
+
+.episode-body{
+  padding: 18px;
+}
+
+.episode-body h3{
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.episode-body p{
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.duration{
+  color: #1CFF9A;
+  font-size: 15px;
+  font-weight: 600;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.duration img{
+  width: 18px;
+  height: 18px;
+}
+
+.host-card{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #2A1347;
+  border-radius: 18px;
+  padding: 28px;
+
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.host-img{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.host-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.host-info h3{
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.host-info p{
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.host-social{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.host-social a{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: grid;
+  place-items: center;
+}
+
+.host-social img{
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  width: 100%;
+  padding: 60px 20px;
+  background: url("../assets/footer-bg.png") no-repeat center/cover;
+  background-color: #1A0B2E;
+}
+
+.footer-content{
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo{
+  font-size: 52px;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.footer-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.footer-link img{
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.footer-copy{
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Medium Devices */
+@media (max-width: 992px) {
+  
+  .nav {
+    height: 64px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .hero-image{
+    padding-top: 110px;
+  }
+
+  .mic{
+    width: 320px;
+    height: 320px;
+  }
+
+  .mic img{
+    width: 155px;
+  }
+
+  .hero-content{
+    padding-top: 50px;
+  }
+
+  .hero-content h1{
+    font-size: 48px;
+  }
+
+  .podcast h2,
+  .features h2{
+    font-size: 38px;
+  }
+
+  .acheivements h2{
+    font-size: 38px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "audio mobile"
+      "audio global"
+      "interview interview"
+      "resources resources";
+  }
+
+  .episodes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .host-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .host-social {
+    justify-content: center;
+  }
+}
+
+/* Small Devices */
+@media (max-width: 576px) {
+
+  .hero{
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .hero-image{
+    padding-top: 90px;
+  }
+
+  .mic{
+    width: 260px;
+    height: 260px;
+  }
+
+  .mic img{
+    width: 125px;
+  }
+
+  .badge{
+    top: 18px;
+    right: 18px;
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .hero-content h1{
+    font-size: 40px;
+  }
+
+  .hero-content p{
+    font-size: 14px;
+  }
+
+  .hero-buttons{
+    width: 100%;
+    gap: 10px;
+    flex-wrap: nowrap; 
+  }
+
+  .hero-buttons button{
+    width: 50%;
+    padding: 12px 10px;
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  .btn-icon{
+    width: 16px;
+    height: 16px;
+  }
+
+  .features {
+    padding: 70px 16px;
+  }
+
+  .features h2{
+    font-size: 32px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "audio"
+      "mobile"
+      "global"
+      "interview"
+      "resources";
+  }
+
+  .features-grid > * {
+    border-radius: 24px;
+  }
+
+  .section-dark {
+    padding: 70px 16px;
+  }
+
+  .episodes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  
+  .footer-links{
+    gap: 8px;
+  }
+
+  .footer-link{
+    width: calc(50% - 8px);
+    margin-top: 0;
+  }
+
+  .footer-copy{
+    margin-top: 30px;
+  }
+}
